@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "child-process": "^1.0.2",
+    "colors": "^1.4.0"
+  }
+}
