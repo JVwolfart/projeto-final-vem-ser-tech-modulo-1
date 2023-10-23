@@ -14,12 +14,12 @@ Você foi contratado como programador para uma grande rede de lojas de automóve
 Dado o escopo global da aplicação, pede-se desenvolver cada subtarefa visando, ao final, a entrega completa da funcionalidade:
 
 
-`1. Criar uma função para verificar o dia da semana atual, que será levado em conta para o disparo dos emails.
+1. Criar uma função para verificar o dia da semana atual, que será levado em conta para o disparo dos emails.
 
 2. Criar uma função para montar o corpo do e-mail a ser enviado.
 
 3. Criar uma função para enviar o e-mail para cada um dos clientes da lista, levando em conta a sua decisão sobre receber comunicações de marketing.
 
 4. Tratar o retorno de erro ou sucesso da função "enviarEmail", de maneira a exibir uma mensagem amigável ao usuário no console.
-`
+
 
