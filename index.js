@@ -28,6 +28,9 @@ function enviarEmailParaClientes (clientes) {
     console.log(`Dia da semana: ${diaDaSemana}`.magenta);
     execSync("sleep 1");
     if (diaDaSemana === "Segunda-feira") {
+        let enviadoSucesso = 0;
+        let noMarketing = 0;
+        let cadastroInvalido = 0;
         console.log("Gerando vendas...".green);
         execSync("sleep 1");
         const vendas = geraVendas();
@@ -43,19 +46,27 @@ function enviarEmailParaClientes (clientes) {
                 if (email.status === "Error"){
                     console.log(("Erro ao enviar email para o cliente " + cliente.nome).red);
                     console.log(email.message.red + "\n\n");
+                    cadastroInvalido ++;
                 } else {
                     console.log(("Email enviado com sucesso para o cliente " + cliente.nome).green + "\n\n");
+                    enviadoSucesso ++;
                 }
             } else {
                 console.log(`O cliente ${cliente.nome} não quer receber emails de marketing`.yellow + "\n\n");
+                noMarketing ++;
             }
             console.log("#####################################################################################".bgCyan + "\n\n");
         }
-        console.log("Todos os emails enviados".green);
+        console.log("Resumo do envio de email marketing:".blue);
+        execSync("sleep 1");
+        console.log(`${enviadoSucesso} emails enviados com sucesso`.green);
+        execSync("sleep 1");
+        console.log(`${noMarketing} emails não foram gerados pois os clientes não querem receber emails de marketing`.yellow);
+        execSync("sleep 1");
+        console.log(`${cadastroInvalido} emails não foram enviados por motivos de inconsistência nos dados cadastrais dos clientes`.red);
         execSync("sleep 1");
     } else {
-        console.log("Hoje não é segunda-feira! O envio de emails para clientes acontece apenas na segunda-feira".yellow);
-        console.log("Encerrando programa...".blue);
+        console.log("Hoje não é segunda-feira! O envio de emails de marketing para clientes acontece apenas na segunda-feira".yellow);
         execSync("sleep 1");
     }
 }
