@@ -8,9 +8,9 @@ const {execSync} = require('child_process');
 
 
 
-//const diaDaSemana = "Segunda-feira";
+const diaDaSemana = "Segunda-feira";
 //const diaDaSemana = "Domingo";
-const diaDaSemana = obterDiaDaSemana();
+//const diaDaSemana = obterDiaDaSemana();
 
 const clientes = [
     {nome: "Sílvio Santos", email: "silvio@sbt.com", desejaReceberEmail: true},
@@ -28,6 +28,8 @@ function enviarEmailParaClientes (clientes) {
     console.log(`Dia da semana: ${diaDaSemana}`.magenta);
     execSync("sleep 1");
     if (diaDaSemana === "Segunda-feira") {
+        console.log("Iniciando envios de emails de marketing...".bgYellow);
+        execSync("sleep 1");
         let enviadoSucesso = 0;
         let noMarketing = 0;
         let cadastroInvalido = 0;
@@ -57,6 +59,8 @@ function enviarEmailParaClientes (clientes) {
             }
             console.log("#####################################################################################".bgCyan + "\n\n");
         }
+        console.log("Envio de emails de marketing finalizado".bgGreen);
+        execSync("sleep 1");
         console.log("Resumo do envio de email marketing:".blue);
         execSync("sleep 1");
         console.log(`${enviadoSucesso} emails enviados com sucesso`.green);
