@@ -22,4 +22,12 @@ Dado o escopo global da aplicação, pede-se desenvolver cada subtarefa visando,
 
 4. Tratar o retorno de erro ou sucesso da função "enviarEmail", de maneira a exibir uma mensagem amigável ao usuário no console.
 
+## Como eu desenvolvi o projeto
 
+Como não há banco de dados, fiz uma função para que cada vez que rodar o programa, ele vai gerar randomicamente a lista dos veículos mais vendidos na semana, e também as novidades da semana. 
+Com esses dados gerados, o sistema deve percorrer a lista de clientes, e enviar o email de marketing respeitando a regra de negócio, que diz que os emails de marketing só podem ser enviados na segunda-feira, os clientes que não desejam receber 
+devem ficar de fora do envio, e clientes que estiverem com inconsistência nos seus dados (como falta de email cadastrado, ou algum outro erro de cadastro que impeça o envio do email), também ficarão sem receber emails. 
+
+Durante a execução, o sistema já vai identificando os emails enviados com sucesso, os clientes que não querem receber, e clientes que eventualmente estejam com alguma inconsistência no cadastro que impede o envio do email.
+
+Ao final, o sistema também emite um resumo de quantos emails foram enviados com sucesso, quantos não foram enviados por opção dos clientes que não querem receber, e quantos não foram enviados por inconsistência no cadastro.
