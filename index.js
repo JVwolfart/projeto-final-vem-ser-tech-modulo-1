@@ -8,9 +8,9 @@ const {execSync} = require('child_process');
 
 
 
-const diaDaSemana = "Segunda-feira";
+//const diaDaSemana = "Segunda-feira";
 //const diaDaSemana = "Domingo";
-//const diaDaSemana = obterDiaDaSemana();
+const diaDaSemana = obterDiaDaSemana();
 
 const clientes = [
     {nome: "Sílvio Santos", email: "silvio@sbt.com", desejaReceberEmail: true},
