@@ -8,9 +8,9 @@ const {execSync} = require('child_process');
 
 
 
-//const diaDaSemana = "Segunda-feira";
+const diaDaSemana = "Segunda-feira";
 //const diaDaSemana = "Domingo";
-const diaDaSemana = obterDiaDaSemana();
+//const diaDaSemana = obterDiaDaSemana();
 
 const clientes = [
     {nome: "Sílvio Santos", email: "silvio@sbt.com", desejaReceberEmail: true},
@@ -36,9 +36,16 @@ function enviarEmailParaClientes (clientes) {
         console.log("Gerando vendas...".green);
         execSync("sleep 1");
         const vendas = geraVendas();
+        console.table(vendas);
         console.log("Verificando novidades...".blue);
         execSync("sleep 1");
         const novidades = geraNovidades();
+        console.table(novidades);
+        execSync("sleep 1");
+        console.log();
+        console.log("Iniciando disparo de emails marketing".bgBlue);
+        console.log();
+        execSync("sleep 2");
         for (const cliente of clientes) {
             console.log(`Enviando email para o cliente ${cliente.nome}...`.cyan);
             execSync('sleep 1');
